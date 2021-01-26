@@ -1,3 +1,3 @@
 # forum-show-note-test
 
-## See in [CodeSandbox](https://cli.vuejs.org/config/).
+## See in [CodeSandbox](https://codesandbox.io/s/upbeat-rhodes-rnvrq).
