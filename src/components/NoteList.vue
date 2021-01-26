@@ -2,8 +2,17 @@
   <div>
     <h3>Note List</h3>
     <ul>
-      <li v-for="note in notes" :key="note.id" @click="showModal(note.id)">{{ note.title }}</li>
+      <li v-for="note in notes" :key="note.id">
+        {{ note.title }}
+        <button class="show-btn" @click="showDetail(note.id)">Show Detail on page</button>
+        <button class="show-btn" @click="showModal(note.id)">Show Detail in Modal</button>
+      </li>
     </ul>
+    <note-detail
+      v-if="displayDetail"
+      :note="selectedNote"
+      @hide-detail-event="hideDetail"
+      />
     <note-detail-modal
       v-if="displayModal"
       :note="selectedNote"
@@ -12,16 +21,19 @@
 </template>
 
 <script>
+  import NoteDetail from '@/components/NoteDetail'
   import NoteDetailModal from '@/components/NoteDetailModal'
 
   export default {
     name: 'NoteList',
     components: {
+      NoteDetail,
       NoteDetailModal
     },
     data() {
       return {
         displayModal: false,
+        displayDetail: false,
         selectedNoteId: 0,
         notes: [
           {
@@ -63,11 +75,21 @@
       },
       hideModal() {
         this.displayModal = false;
+      },
+      showDetail(id) {
+        this.selectedNoteId = id;
+        this.displayDetail = true;
+      },
+      hideDetail() {
+        this.displayDetail = false;
       }
     }
   }
 </script>
 
 <style scoped>
+  .show-btn {
+    margin-left: 1em;
+  }
 
 </style>

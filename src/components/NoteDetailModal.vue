@@ -1,5 +1,5 @@
 <template>
-  <div id="modal-dialog" class="modal-dialog-container">
+  <div class="note-detail-modal">
 
     <div class="modal-dialog-content">
       <div class="modal-dialog-header">
@@ -38,7 +38,7 @@
 </script>
 
 <style scoped>
-  .modal-dialog-container {
+  .note-detail-modal {
     position: fixed;
     /* Stay in place */
     z-index: 1;
