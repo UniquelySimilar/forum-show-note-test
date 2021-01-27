@@ -4,12 +4,13 @@
     <div class="modal-dialog-content">
       <div class="modal-dialog-header">
         <h4>Note Detail</h4>
+        <hr>
       </div>
       <div class="modal-dialog-body">
-        <p><span class="label">ID:</span>{{ note.id }}</p>
-        <p><span class="label">TITLE:</span>{{ note.title }}</p>
-        <p><span class="label">BODY:</span>{{ note.body }}</p>
-        <p><span class="label">DATE:</span>{{ note.date }}</p>
+        <span class="label">ID:</span>{{ note.id }}<br>
+        <span class="label">TITLE:</span>{{ note.title }}<br>
+        <span class="label">BODY:</span>{{ note.body }}<br>
+        <span class="label">DATE:</span>{{ note.date }}
       </div>
       <div class="modal-dialog-footer">
         <div class="btn-wrapper">
