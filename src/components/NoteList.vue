@@ -1,23 +1,34 @@
 <template>
   <div>
-    <h3>Note List</h3>
-    <div class="col-4">
-      <div class="row" v-for="note in notes" :key="note.id">
-        <div class="col-4">{{ note.title }}</div>
-        <div class="col-4">
-          <button class="btn btn-primary btn-sm detail-btn" @click="showDetail(note.id)">Show Detail</button>
+    <div class="row">
+      <div class="col-4">
+
+        <div class="row">
+          <div class="col-12">
+            <span class="list-title">Note List</span>
+          </div>
         </div>
-        <div class="col-4">
-          <button class="btn btn-secondary btn-sm detail-btn" @click="showModal(note.id)">Detail Modal</button>
+
+        <div class="row border" v-for="note in notes" :key="note.id">
+          <div class="col-4">{{ note.title }}</div>
+          <div class="col-4">
+            <button class="btn btn-primary btn-xs detail-btn" @click="showDetail(note.id)">Detail</button>
+          </div>
+          <div class="col-4">
+            <button class="btn btn-secondary btn-xs detail-btn" @click="showModal(note.id)">Modal</button>
+          </div>
         </div>
+
       </div>
     </div>
 
-    <note-detail
+    <div class="detail">
+      <note-detail
       v-if="displayDetail"
       :note="selectedNote"
       @hide-detail-event="hideDetail"
       />
+    </div>
 
     <note-detail-modal
       v-if="displayModal"
@@ -92,7 +103,19 @@
 
 <style scoped>
   .detail-btn {
-    margin-left: 1em;
+    margin-left: 1rem;
+  }
+
+  /* No longer available in Bootstrap 4 */
+  .btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+  }
+
+  .detail {
+    margin-top: 1rem;
   }
 
 </style>

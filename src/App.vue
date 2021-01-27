@@ -16,5 +16,9 @@
 </script>
 
 <style>
+  .list-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
 
 </style>

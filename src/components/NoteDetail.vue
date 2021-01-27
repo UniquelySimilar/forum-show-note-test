@@ -1,21 +1,36 @@
 <template>
   <div class="note-detail">
-    <h3>Note Detail</h3>
-    <table>
-      <thead>
-        <th>ID</th>
-        <th>TITLE</th>
-        <th>BODY</th>
-        <th>DATE</th>
-      </thead>
-      <tbody>
-        <td>{{ note.id }}</td>
-        <td>{{ note.title }}</td>
-        <td>{{ note.body }}</td>
-        <td>{{ note.date }}</td>
-      </tbody>
-    </table>
-    <button @click="hideDetail">Hide Detail</button>
+    <div class="row">
+      <div class="col-6">
+
+        <div class="row">
+          <div class="col-12">
+            <span class="list-title">Note Detail</span>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col 12">
+            <table class="table table-bordered">
+              <thead>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>BODY</th>
+                <th>DATE</th>
+              </thead>
+              <tbody>
+                <td>{{ note.id }}</td>
+                <td>{{ note.title }}</td>
+                <td>{{ note.body }}</td>
+                <td>{{ note.date }}</td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <button class="btn btn-secondary btn-sm" @click="hideDetail">Hide Detail</button>
   </div>
 </template>
 
@@ -36,13 +51,7 @@
 </script>
 
 <style scoped>
-  table,
-  th,
-  td {
-    border: 1px solid black;
-  }
-
-  button {
-    margin-top: 1em;
+  .table th, .table td {
+    padding: 0.25rem;
   }
 </style>
