@@ -62,14 +62,11 @@
     },
     computed: {
       selectedNote() {
-        return this.notes.filter( note => {
-          return note.id === this.selectedNoteId;
-        })[0];
+        return this.notes.find( note => note.id === this.selectedNoteId );
       }
     },
     methods: {
       showModal(id) {
-        //console.log('showModal for id: ' + id);
         this.selectedNoteId = id;
         this.displayModal = true;
       },
