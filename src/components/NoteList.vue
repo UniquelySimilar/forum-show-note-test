@@ -1,18 +1,24 @@
 <template>
   <div>
     <h3>Note List</h3>
-    <ul>
-      <li v-for="note in notes" :key="note.id">
-        {{ note.title }}
-        <button class="show-btn" @click="showDetail(note.id)">Show Detail on page</button>
-        <button class="show-btn" @click="showModal(note.id)">Show Detail in Modal</button>
-      </li>
-    </ul>
+    <div class="col-4">
+      <div class="row" v-for="note in notes" :key="note.id">
+        <div class="col-4">{{ note.title }}</div>
+        <div class="col-4">
+          <button class="btn btn-primary btn-sm detail-btn" @click="showDetail(note.id)">Show Detail</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-secondary btn-sm detail-btn" @click="showModal(note.id)">Detail Modal</button>
+        </div>
+      </div>
+    </div>
+
     <note-detail
       v-if="displayDetail"
       :note="selectedNote"
       @hide-detail-event="hideDetail"
       />
+
     <note-detail-modal
       v-if="displayModal"
       :note="selectedNote"
@@ -85,7 +91,7 @@
 </script>
 
 <style scoped>
-  .show-btn {
+  .detail-btn {
     margin-left: 1em;
   }
 
