@@ -64,7 +64,7 @@
     padding: 20px;
     border: 1px solid #888;
     border-radius: 0.3rem;
-    width: 30%;
+    width: 80%;
   }
 
   .modal-dialog-footer {
@@ -78,5 +78,17 @@
   .label {
     font-weight: bold;
     margin-right: 1em;
+  }
+
+  @media only screen and (min-width: 576px) {
+    .modal-dialog-content {
+      width: 60%
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .modal-dialog-content {
+      width: 40%
+    }
   }
 </style>

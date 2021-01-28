@@ -1,7 +1,7 @@
 <template>
   <div class="note-detail">
     <div class="row">
-      <div class="col-6">
+      <div class="col-lg-6 col-md-8 col-sm 12">
 
         <div class="row">
           <div class="col-12">
